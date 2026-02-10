@@ -28,7 +28,7 @@ public class BfhlController {
     public ResponseEntity<Map<String, Object>> health() {
         Map<String, Object> response = new LinkedHashMap<>();
         response.put("is_success", true);
-        response.put("official_email", YOUR_EMAIL);
+        response.put("official_email", "amisha@chitkara.edu.in");
         return ResponseEntity.ok(response);
     }
 
@@ -41,7 +41,7 @@ public class BfhlController {
             // Validate that exactly one key exists
             if (request.isEmpty()) {
                 response.put("is_success", false);
-                response.put("official_email", YOUR_EMAIL);
+                response.put("official_email", "amisha@chitkara.edu.in");
                 response.put("error", "Request body cannot be empty");
                 return ResponseEntity.badRequest().body(response);
             }
@@ -51,12 +51,12 @@ public class BfhlController {
                 int n = ((Number) request.get("fibonacci")).intValue();
                 if (n < 0) {
                     response.put("is_success", false);
-                    response.put("official_email", YOUR_EMAIL);
+                    response.put("official_email", "amisha@chitkara.edu.in");
                     response.put("error", "Fibonacci input must be non-negative");
                     return ResponseEntity.badRequest().body(response);
                 }
                 response.put("is_success", true);
-                response.put("official_email", YOUR_EMAIL);
+                response.put("official_email","amisha@chitkara.edu.in");
                 response.put("data", fibonacci(n));
                 return ResponseEntity.ok(response);
             }
@@ -66,7 +66,7 @@ public class BfhlController {
                 List<Integer> numbers = convertToList(request.get("prime"));
                 if (numbers.isEmpty()) {
                     response.put("is_success", false);
-                    response.put("official_email", YOUR_EMAIL);
+                    response.put("official_email", "amisha@chitkara.edu.in");
                     response.put("error", "Prime array cannot be empty");
                     return ResponseEntity.badRequest().body(response);
                 }
@@ -75,7 +75,7 @@ public class BfhlController {
                     if (isPrime(num)) primes.add(num);
                 }
                 response.put("is_success", true);
-                response.put("official_email", YOUR_EMAIL);
+                response.put("official_email","amisha@chitkara.edu.in");
                 response.put("data", primes);
                 return ResponseEntity.ok(response);
             }
@@ -85,7 +85,7 @@ public class BfhlController {
                 List<Integer> numbers = convertToList(request.get("lcm"));
                 if (numbers.isEmpty()) {
                     response.put("is_success", false);
-                    response.put("official_email", YOUR_EMAIL);
+                    response.put("official_email", "amisha@chitkara.edu.in");
                     response.put("error", "LCM array cannot be empty");
                     return ResponseEntity.badRequest().body(response);
                 }
@@ -94,7 +94,7 @@ public class BfhlController {
                     result = lcm(result, numbers.get(i));
                 }
                 response.put("is_success", true);
-                response.put("official_email", YOUR_EMAIL);
+                response.put("official_email", "amisha@chitkara.edu.in");
                 response.put("data", result);
                 return ResponseEntity.ok(response);
             }
@@ -104,7 +104,7 @@ public class BfhlController {
                 List<Integer> numbers = convertToList(request.get("hcf"));
                 if (numbers.isEmpty()) {
                     response.put("is_success", false);
-                    response.put("official_email", YOUR_EMAIL);
+                    response.put("official_email", "amisha@chitkara.edu.in");
                     response.put("error", "HCF array cannot be empty");
                     return ResponseEntity.badRequest().body(response);
                 }
@@ -113,7 +113,7 @@ public class BfhlController {
                     result = gcd(result, numbers.get(i));
                 }
                 response.put("is_success", true);
-                response.put("official_email", YOUR_EMAIL);
+                response.put("official_email","amisha@chitkara.edu.in");
                 response.put("data", result);
                 return ResponseEntity.ok(response);
             }
@@ -123,31 +123,31 @@ public class BfhlController {
                 String question = (String) request.get("AI");
                 if (question == null || question.trim().isEmpty()) {
                     response.put("is_success", false);
-                    response.put("official_email", YOUR_EMAIL);
+                    response.put("official_email", "amisha@chitkara.edu.in");
                     response.put("error", "AI question cannot be empty");
                     return ResponseEntity.badRequest().body(response);
                 }
                 String answer = askGemini(question);
                 response.put("is_success", true);
-                response.put("official_email", YOUR_EMAIL);
+                response.put("official_email", "amisha@chitkara.edu.in");
                 response.put("data", answer);
                 return ResponseEntity.ok(response);
             }
 
             // No valid key found
             response.put("is_success", false);
-            response.put("official_email", YOUR_EMAIL);
+            response.put("official_email", "amisha@chitkara.edu.in");
             response.put("error", "Invalid request key. Must be one of: fibonacci, prime, lcm, hcf, AI");
             return ResponseEntity.badRequest().body(response);
 
         } catch (ClassCastException e) {
             response.put("is_success", false);
-            response.put("official_email", YOUR_EMAIL);
+            response.put("official_email", "amisha@chitkara.edu.in");
             response.put("error", "Invalid input type: " + e.getMessage());
             return ResponseEntity.badRequest().body(response);
         } catch (Exception e) {
             response.put("is_success", false);
-            response.put("official_email", YOUR_EMAIL);
+            response.put("official_email", "amisha@chitkara.edu.in");
             response.put("error", "Internal error: " + e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }
