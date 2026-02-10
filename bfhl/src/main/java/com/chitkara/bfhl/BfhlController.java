@@ -20,7 +20,7 @@ import java.util.*;
 public class BfhlController {
 
     private static final String YOUR_EMAIL = "amisha0276.be23@chitkara.edu.in";
-    private static final String GEMINI_API_KEY = "YOUR_API_KEY_HERE"; // ⚠️ ADD YOUR KEY
+    private static final String GEMINI_API_KEY = "AIzaSyCuobWsuWdwUmiL7A_1CB0D7BbUEuzK5oI"; // ⚠️ ADD YOUR KEY
 
 
     // ✅ GET /health
@@ -206,7 +206,7 @@ public class BfhlController {
     // ========== GEMINI AI ==========
 
     private String askGemini(String question) throws Exception {
-        if (GEMINI_API_KEY.equals("YOUR_API_KEY_HERE") || GEMINI_API_KEY.isEmpty()) {
+        if (GEMINI_API_KEY.equals("AIzaSyCuobWsuWdwUmiL7A_1CB0D7BbUEuzK5oI") || GEMINI_API_KEY.isEmpty()) {
             return "API_KEY_NOT_CONFIGURED";
         }
 
