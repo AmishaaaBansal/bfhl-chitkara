@@ -5,9 +5,9 @@ WORKDIR /app
 COPY . .
 
 # 👇 THIS LINE IS THE FIX
-RUN chmod +x mvnw
+RUN chmod +x bfhl/mvnw
+RUN cd bfhl && ./mvnw clean package -DskipTests
 
-RUN ./mvnw clean package -DskipTests
 
 EXPOSE 8080
 
